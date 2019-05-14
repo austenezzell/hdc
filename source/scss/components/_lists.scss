@@ -1,0 +1,57 @@
+/*
+Lists
+
+For listing
+
+Markup:
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+<ol>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ol>
+
+Style guide: Components.Lists
+*/
+
+ul {
+  margin: 0 0 1em;
+}
+
+
+ul.normal-list {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    position: relative;
+    margin: 10px 0;
+    padding: 0 20px;
+    &:before {
+      content: '—';
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+ul.important-list {
+ margin: 0;
+ padding: 0;
+ @include breakpoint(md) {
+  margin: 0px 0 0 0;
+ }
+ li {
+   list-style: none;
+   margin-bottom: 10px;
+   @include md-font();
+   @include breakpoint(lg) {
+     @include md-font();
+   }
+   span {
+     font-weight: bold;
+   }
+  }
+}

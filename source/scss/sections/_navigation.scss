@@ -1,0 +1,35 @@
+/* ====================================
+ * Navigation
+ * ==================================== */
+
+ nav {
+   a {
+     color: black;
+     text-decoration: none;
+     padding: 5px 0;
+     margin-top: 12px;
+     display: inline-block;
+     @include breakpoint(sm) {
+       margin-top: 18px;
+     }
+     @include breakpoint(lg) {
+       margin-top: 0;
+     }
+
+     &:hover {
+       text-decoration: underline;
+     }
+   }
+ }
+
+.sustainability-management-page {
+  .nav-management {
+    color: red;
+  }
+}
+
+.products-page {
+  .nav-products {
+    color: red;
+  }
+}

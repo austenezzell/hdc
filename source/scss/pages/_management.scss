@@ -1,0 +1,31 @@
+//
+// /* Management
+//  * ==================================== */
+
+.sustainability-management-page {
+    .page a {
+      color: white;
+      transition: color .4s;
+      &:hover {
+        color: $color-red;
+      }
+    }
+    .cloud {
+      position: relative;
+      left: 0;
+      z-index: 0;
+      display: none;
+
+      @include breakpoint(md) {
+        display: block;
+        left: 16.66%;
+      }
+      @include breakpoint(xl) {
+        left: 8.33%;
+      }
+    }
+
+  .important-list-title {
+    margin: 50px 0 30px;
+  }
+}

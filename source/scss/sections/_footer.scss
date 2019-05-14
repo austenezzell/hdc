@@ -1,0 +1,41 @@
+/* ====================================
+ * Footer
+ * ==================================== */
+
+footer {
+  background: $color-dark-gray;
+  color: white;
+  margin-top: 90px;
+  .footer-logo {
+    svg {
+      width: 150px;
+      height: 30px;
+      margin-bottom: 30px;
+      g {
+        fill: white;
+      }
+    }
+  }
+  a {
+    // color: $color-black!important;
+    text-decoration: none;
+    &:hover {
+      color: $color-red!important;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li, a {
+      list-style: none;
+      @include xs-font();
+      margin-bottom: 12px;
+      color: $color-gray;
+      span {
+        padding-right: 10px;
+        color: $color-gray;
+        font-weight: bold;
+      }
+    }
+  }
+}

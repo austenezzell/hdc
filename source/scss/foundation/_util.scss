@@ -1,0 +1,219 @@
+// Utility classes
+// .{utility-name}-[breakpoint]-{propery|value}
+
+
+// Margin & Padding
+@mixin box-spacing($value) {
+  $box-sides: ( top: top, bottom: bottom, left: left, right: right );
+
+  // '$n' is the number of classes you want to generate * '$i'
+  $n: 4;
+
+  // see _variables.scss for breakpoint definitions
+  @each $breakpoint in $breakpoints {
+    @include breakpoint($breakpoint) {
+      .margin-#{$breakpoint} {
+        margin: $value;
+      }
+
+      .padding-#{$breakpoint} {
+        padding: $value;
+      }
+
+      @each $side in map_keys($box-sides) {
+        $sides: map-get($box-sides, #{$side});
+
+        .margin-#{$side}-#{$breakpoint}-half {
+          margin-#{$sides}: $value / 2;
+        }
+
+        .padding-#{$side}-#{$breakpoint}-half {
+          padding-#{$sides}: $value / 2;
+        }
+
+        @for $i from 1 through $n {
+          .margin-#{$side}-#{$breakpoint}-#{$i}x {
+            margin-#{$sides}: $value * $i;
+          }
+
+          .padding-#{$side}-#{$breakpoint}-#{$i}x {
+            padding-#{$sides}: $value * $i;
+          }
+        }
+      }
+
+      .margin-y-#{$breakpoint}-half {
+        margin-top: $value / 2;
+        margin-bottom: $value / 2;
+      }
+
+      .padding-y-#{$breakpoint}-half {
+        padding-top: $value / 2;
+        padding-bottom: $value / 2;
+      }
+
+      .margin-x-#{$breakpoint}-half {
+        margin-left: $value / 2;
+        margin-right: $value / 2;
+      }
+
+      .padding-x-#{$breakpoint}-half {
+        padding-left: $value / 2;
+        padding-right: $value / 2;
+      }
+
+      @for $i from 1 through $n {
+        .margin-y-#{$breakpoint}-#{$i}x {
+          margin-top: $value * $i;
+          margin-bottom: $value * $i;
+        }
+
+        .padding-y-#{$breakpoint}-#{$i}x {
+          padding-top: $value * $i;
+          padding-bottom: $value * $i;
+        }
+
+        .margin-x-#{$breakpoint}-#{$i}x {
+          margin-left: $value * $i;
+          margin-right: $value * $i;
+        }
+
+        .padding-x-#{$breakpoint}-#{$i}x {
+          padding-left: $value * $i;
+          padding-right: $value * $i;
+        }
+      }
+
+      .margin-x-#{$breakpoint}-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .margin-#{$breakpoint}-0 {
+        margin: 0;
+      }
+
+      .padding-#{$breakpoint}-0 {
+        padding: 0;
+      }
+    }
+  }
+}
+@include box-spacing($base-spacing);
+
+@each $breakpoint in $breakpoints {
+  @include breakpoint($breakpoint) {
+
+    // Floats
+    .float-#{$breakpoint}-left {
+      float: left;
+    }
+
+    .float-#{$breakpoint}-right {
+      float: right;
+    }
+
+    // Display
+    .display-#{$breakpoint}-block {
+      display: block;
+    }
+
+    .display-#{$breakpoint}-inline {
+      display: inline;
+    }
+
+    .display-#{$breakpoint}-inlineBlock {
+      display: inline-block;
+    }
+
+    .display-#{$breakpoint}-hide {
+      display: none;
+    }
+
+    // Text
+    .text-#{$breakpoint}-left {
+      text-align: left;
+    }
+
+    .text-#{$breakpoint}-right {
+      text-align: right;
+    }
+
+    .text-#{$breakpoint}-center {
+      text-align: center;
+    }
+
+    .text-#{$breakpoint}-hide {
+      text-indent: -1000%;
+    }
+
+    .text-#{$breakpoint}-nowrap {
+      white-space: nowrap;
+    }
+  }
+}
+
+// Lists
+.list-reset {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.list-inline {
+  > li { display: inline-block; }
+}
+
+// Border
+.border {
+  border: 1px solid #eee;
+}
+
+.border-top {
+  border-top: 1px solid #eee;
+}
+
+.border-right {
+  border-right: 1px solid #eee;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #eee;
+}
+
+.border-left {
+  border-left: 1px solid #eee;
+}
+
+// Color
+.text-primary {
+  color: $color-primary;
+}
+.text-secondary {
+  color: $color-secondary;
+}
+
+// Background
+.bg-primary {
+  background-color: $color-primary;
+}
+.bg-secondary {
+  background-color: $color-secondary;
+}
+
+// Clearfix
+.clearfix {
+  @extend %clearfix;
+}
+
+.showgrid {
+  .row {
+    background-color: rgba($hd-blue, 0.05);
+  }
+  .col {
+    background-color: rgba($hd-blue, 0.2);
+  }
+  .col + .col:nth-child(even) {
+    background-color: rgba($hd-blue, 0.1);
+  }
+}

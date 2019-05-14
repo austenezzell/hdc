@@ -1,0 +1,83 @@
+:root {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: none;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  background: black;
+}
+
+body {
+  @include regular-font();
+  @include font-size($sm-font-size);
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.full-height {
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  background: black;
+  .friends {
+    // height: 61px;
+    // width: 80px;
+    margin: auto;
+    z-index: 999999;
+  }
+}
+.intro {
+  animation-name: fade-out;
+  animation-duration: 1.4s;
+  animation-delay: .5s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+ 0% { opacity: 1; visibility: visable;}
+ 100% { opacity: 0; visibility: hidden;}
+}
+
+/* Page transitions
+ * ==================================== */
+
+ .m-scene .scene_element {
+  animation-duration: 1400ms;
+  transition-timing-function: ease-in;
+  // animation-fill-mode: both;
+  position: relative;
+ }
+
+ .m-scene .scene_element--fadein {
+  animation-name: fadeIn-moveUp;
+ }
+
+ .m-scene.is-exiting .scene_element {
+  animation-direction: alternate-reverse;
+ }
+
+ /*
+ * Keyframes
+ */
+ @keyframes fadeIn-moveUp {
+  0% { opacity: 0; top: 30px; }
+  100% { opacity: 1; top:0; }
+ }

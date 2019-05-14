@@ -1,0 +1,26 @@
+/* ====================================
+ * Header
+ * ==================================== */
+
+.site-title {
+
+  position: relative;
+  margin: 0 ;
+
+
+  @include breakpoint(lg) {
+    position: fixed;
+    z-index: 1;
+    top: 200px;
+    left: 8.33%;
+    margin-left: 20px;
+  }
+  svg {
+    g#hd {
+      display: none;
+      @include breakpoint(md) {
+        display: block;
+      }
+    }
+  }
+}

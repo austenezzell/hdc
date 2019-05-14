@@ -1,0 +1,63 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+p, ul, ol, pre, table, blockquote {
+  margin-top: 0;
+  margin-bottom: $base-spacing;
+}
+
+h1, .h1 {
+  @include regular-font();
+  @include xl-font();
+  @include breakpoint(md) {
+    @include xxl-font();
+  }
+}
+
+h2, .h2 {
+  @include bold-font();
+  @include xl-font();
+}
+
+h3, .h3 {
+  @include bold-font();
+  @include lg-font();
+}
+
+h4, .h4 {
+  @include bold-font();
+  @include md-font();
+}
+
+h5, .h5 {
+  @include sm-font();
+}
+
+h6, .h6 {
+  @include xs-font();
+}
+
+p, ul, ol, pre, table, blockquote {
+  @include sm-font();
+}
+
+p {}
+
+ul, ol {}
+
+a {
+  color: $hd-blue;
+}
+
+p a {}
+
+em {}
+
+strong, b {
+  @include bold-font();
+}
+
+i {}
+
+time {}
+
+hr {}

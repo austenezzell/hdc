@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'theinhardt-regular';
+  src: url('/fonts/theinhardt/Theinhardt-Regular.eot');
+  src: url('/fonts/theinhardt/Theinhardt-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/theinhardt/Theinhardt-Regular.woff') format('woff'),
+       url('/fonts/theinhardt/Theinhardt-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'theinhardt-bold';
+  src: url('/fonts/theinhardt/Theinhardt-Bold.eot');
+  src: url('/fonts/theinhardt/Theinhardt-Bold.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/theinhardt/Theinhardt-Bold.woff') format('woff'),
+       url('/fonts/theinhardt/Theinhardt-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'theinhardt-light';
+  src: url('/fonts/theinhardt/Theinhardt-Light.eot');
+  src: url('/fonts/theinhardt/Theinhardt-Light.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/theinhardt/Theinhardt-Light.woff') format('woff'),
+       url('/fonts/theinhardt/Theinhardt-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin xs-font() {
+  @include font-size($xs-font-size);
+  line-height: $body-line-height;
+}
+
+@mixin sm-font() {
+  @include font-size($sm-font-size);
+  line-height: $body-line-height;
+}
+
+@mixin md-font {
+  @include font-size($md-font-size);
+  line-height: $body-line-height;
+}
+
+@mixin lg-font {
+  @include font-size($lg-font-size);
+  line-height: $header-line-height;
+}
+
+@mixin xl-font {
+  @include font-size($xl-font-size);
+  line-height: $header-line-height;
+}
+
+@mixin xxl-font {
+  @include font-size($xxl-font-size);
+  line-height: $header-line-height;
+}
+
+@mixin xxxl-font {
+  @include font-size($xxxl-font-size);
+  line-height: $header-line-height;
+}
